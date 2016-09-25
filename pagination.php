@@ -15,21 +15,4 @@ $start_from = ($page-1) * $limit;
 
                 
                 
-                <?php
-				foreach($list as $col)
-				{
-				  ?>
-                  <tr id="row_num_<?php echo $col['student_id'];   ?>">
-                    <td> <?php echo $col['first_name'];  ?> </td>
-                    <td> <?php echo $col['last_name'];  ?> </td>
-                     <td> <?php echo $col['user_name'];  ?> </td>
-                      <td> <?php echo $col['email'];  ?> </td>
-                    <td class="td-actions"><a class="btn btn-small btn-success" href="editStudent.php?student_id=<?php echo $col['student_id'];   ?>"><i class="icon-large icon-edit"> </i></a><a class="btn btn-danger btn-small" onClick="getStudentId(<?php echo $col['student_id'];   ?>)"   href="javascript:void(0)"><i class="btn-icon-only icon-remove"> </i></a></td>
-                  </tr>
-             
-                  
-                  <?php } ?>
-                   
-                
                
-             
