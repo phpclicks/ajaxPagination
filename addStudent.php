@@ -73,7 +73,7 @@
 											
 										<div class="form-actions">
 											<button class="btn btn-primary" type="button" id="addStudent">Save</button> 
-											<button class="btn">Cancel</button>
+											<a href="index.php"  class="btn">Cancel</a>
 										</div> <!-- /form-actions -->
 									</fieldset>
 								</form>
@@ -82,5 +82,11 @@
           </div>
           </div>
           
+         <script>
+         function recirect()
+		 {
+		   window.location="index.php";	 
+		 }
          
+         </script>
           <?php include_once("footer.php");  ?>

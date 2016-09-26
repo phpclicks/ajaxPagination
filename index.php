@@ -1,24 +1,24 @@
 <?php  include_once("header.php"); 
 	   include_once("include/config.php");
-	   $statement = $db_con->prepare("select * from student where student_id > :student_id");
-       $statement->execute(array(':student_id' => 0));
-	    //$statement::rowCount();
-	   
-	   $list = $statement->fetchAll(PDO::FETCH_ASSOC);
-	   
-	   //include('db.php'); 
-$limit = 2;
-//$sql = "SELECT COUNT(id) FROM posts";  
-//$rs_result = mysql_query($sql);  
-//$row = mysql_fetch_row($rs_result);  
-$total_records = count($list);  
-$total_pages = ceil($total_records / $limit); 
 
-	   //echo "<pre>";
-	  // print_r( $list);
-	  /// echo "</pre>";
-	   //exit;
+
 ?>
+<style>
+.pagination .custom-active {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #ddd;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    float: left;
+    line-height: 34px;
+    padding: 0 14px;
+    text-decoration: none;
+}
+</style>
 <div class="container" style="margin-top:50px">
 <div class="row">
    <div class="alert" id="error-msg">
@@ -61,8 +61,9 @@ $total_pages = ceil($total_records / $limit);
 
             </div>
             
-            <div align="center">
-<ul class='pagination text-center' id="pagination">
+            <div align="center" id="append-pagination">
+            <?php //echo paginate_function(2,1,$total_records,$total_pages);  ?>
+<!--<ul class='pagination text-center' id="pagination">
 <?php if(!empty($total_pages)):for($i=1; $i<=$total_pages; $i++):  
             if($i == 1):?>
             <li class='active'  id="<?php echo $i;?>"><a href='pagination.php?page=<?php echo $i;?>'><?php echo $i;?></a></li> 
@@ -70,7 +71,7 @@ $total_pages = ceil($total_records / $limit);
             <li id="<?php echo $i;?>"><a href='pagination.php?page=<?php echo $i;?>'><?php echo $i;?></a></li>
         <?php endif;?>          
 <?php endfor;endif;?>  
-</ul>
+</ul>-->
 </div>
 
             <!-- /widget-content --> 
@@ -78,7 +79,9 @@ $total_pages = ceil($total_records / $limit);
           </div>
           </div>
 
-          
+     <?php
+	 
+	 ?>     
          
       
 												

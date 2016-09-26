@@ -63,7 +63,7 @@
 											
 										<div class="form-actions">
 											<button class="btn btn-primary" type="button" id="editStudent">Save</button> 
-											<button class="btn">Cancel</button>
+											<a href="index.php"  class="btn">Cancel</a>
 										</div> <!-- /form-actions -->
 									</fieldset>
 								</form>

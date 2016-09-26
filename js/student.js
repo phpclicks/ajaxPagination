@@ -61,15 +61,15 @@ $(function()
 			$.post("pagination.php?page=1", function(data) {
 			var htm = "";
 			var resp = jQuery.parseJSON(data);
-			if(resp.length>0)
+			if(resp['rec'].length>0)
 			{
-				for(var i = 0 ; i<resp.length ; i++) {
-					var sid =  resp[i]['student_id'];
+				for(var i = 0 ; i<resp['rec'].length ; i++) {
+					var sid =  resp['rec'][i]['student_id'];
 			 htm  +='<tr id="row_num_'+sid+'">';
-			 htm  +='<td>'+resp[i]['first_name']+'</td>';
-			 htm  +='<td>'+resp[i]['last_name']+'</td>';
-			 htm  +='<td>'+resp[i]['user_name']+'</td>';
-			 htm  +='<td>'+resp[i]['email']+'</td>';
+			 htm  +='<td>'+resp['rec'][i]['first_name']+'</td>';
+			 htm  +='<td>'+resp['rec'][i]['last_name']+'</td>';
+			 htm  +='<td>'+resp['rec'][i]['user_name']+'</td>';
+			 htm  +='<td>'+resp['rec'][i]['email']+'</td>';
 			 htm  +='<td class="td-actions"><a class="btn btn-small btn-success" href="editStudent.php?student_id='+sid+'"><i class="icon-large icon-edit"> </i></a><a class="btn btn-danger btn-small" onClick="getStudentId('+sid+')"   href="javascript:void(0)"><i class="btn-icon-only icon-remove"> </i></a></td>';
 				}
 				
@@ -82,28 +82,31 @@ $(function()
 			
 			}
 			jQuery("#target-content").html(htm);
+			jQuery("#append-pagination").html(resp['pagination']);
 
 });
 
-    jQuery("#pagination li").live('click',function(e){
+   // jQuery("#pagination li").live('click',function(e){
+	   $("#append-pagination").on( "click", ".pagination a", function (e){
     e.preventDefault();
         jQuery("#target-content").html('loading...');
         jQuery("#pagination li").removeClass('active');
         jQuery(this).addClass('active');
-        var pageNum = this.id;
+       // var pageNum = this.id;
+	    var pageNum = $(this).attr("data-page");
 		
 		$.post("pagination.php?page=" + pageNum, function(data) {
 			var htm = "";
 			var resp = jQuery.parseJSON(data);
-			if(resp.length>0)
+			if(resp['rec'].length>0)
 			{
-				for(var i = 0 ; i<resp.length ; i++) {
-					var sid =  resp[i]['student_id'];
+				for(var i = 0 ; i<resp['rec'].length ; i++) {
+					var sid =  resp['rec'][i]['student_id'];
 			 htm  +=' <tr id="row_num_'+sid+'">';
-			 htm  +='<td>'+resp[i]['first_name']+'</td>';
-			 htm  +='<td>'+resp[i]['last_name']+'</td>';
-			 htm  +='<td>'+resp[i]['user_name']+'</td>';
-			 htm  +='<td>'+resp[i]['email']+'</td>';
+			 htm  +='<td>'+resp['rec'][i]['first_name']+'</td>';
+			 htm  +='<td>'+resp['rec'][i]['last_name']+'</td>';
+			 htm  +='<td>'+resp['rec'][i]['user_name']+'</td>';
+			 htm  +='<td>'+resp['rec'][i]['email']+'</td>';
 			 htm  +='<td class="td-actions"><a class="btn btn-small btn-success" href="editStudent.php?student_id='+sid+'"><i class="icon-large icon-edit"> </i></a><a class="btn btn-danger btn-small" onClick="getStudentId('+sid+')"   href="javascript:void(0)"><i class="btn-icon-only icon-remove"> </i></a></td>';
 				}
 				
@@ -116,6 +119,7 @@ $(function()
 			
 			}
 			jQuery("#target-content").html(htm);
+			jQuery("#append-pagination").html(resp['pagination']);
 			
 });
 
