@@ -62,16 +62,8 @@
             </div>
             
             <div align="center" id="append-pagination">
-            <?php //echo paginate_function(2,1,$total_records,$total_pages);  ?>
-<!--<ul class='pagination text-center' id="pagination">
-<?php if(!empty($total_pages)):for($i=1; $i<=$total_pages; $i++):  
-            if($i == 1):?>
-            <li class='active'  id="<?php echo $i;?>"><a href='pagination.php?page=<?php echo $i;?>'><?php echo $i;?></a></li> 
-            <?php else:?>
-            <li id="<?php echo $i;?>"><a href='pagination.php?page=<?php echo $i;?>'><?php echo $i;?></a></li>
-        <?php endif;?>          
-<?php endfor;endif;?>  
-</ul>-->
+           
+
 </div>
 
             <!-- /widget-content --> 
@@ -89,41 +81,11 @@
 													 <!-- Button to trigger modal -->
                                                    
                                                      
-                                                    <!-- Modal -->
-                                                    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                      <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                        <h3 id="myModalLabel">Alert</h3>
-                                                      </div>
-                                                      <div class="modal-body">
-                                                        <p>Are you sure you want to delete record</p>
-                                                      </div>
-                                                      <div class="modal-footer">
-                                                        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-                                                        <button class="btn btn-primary" onClick="deleteStudent()">Delete</button>
-                                                      </div>
-                                                    </div>
-									
+                                                   
                                     
                                    
 											
           <?php include_once("footer.php");  ?>
 		  
-           <script>
-jQuery(document).ready(function() {
-	
-    });
-</script>		<!-- Modal -->
-                                                    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                      <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                        <h3 id="myModalLabel">Alert</h3>
-                                                      </div>
-                                                      <div class="modal-body">
-                                                        <p>Are you sure you want to delete record</p>
-                                                      </div>
-                                                      <div class="modal-footer">
-                                                        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-                                                        <button class="btn btn-primary" onClick="deleteStudent()">Delete</button>
-                                                      </div>
-                                                    </div>
+    
+                                                   

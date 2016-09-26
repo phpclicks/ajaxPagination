@@ -82,11 +82,5 @@
           </div>
           </div>
           
-         <script>
-         function recirect()
-		 {
-		   window.location="index.php";	 
-		 }
-         
-         </script>
+        
           <?php include_once("footer.php");  ?>
