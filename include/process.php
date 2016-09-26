@@ -1,5 +1,5 @@
 <?php
-	$db_con = new PDO('mysql:host=localhost;dbname=php_clicks', 'root', '');
+   include('config.php');
 	$error  = array();
 	$res    = array();
 	$success = "";
